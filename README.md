@@ -9,3 +9,6 @@ graph LR
     B-->C
     C-->D
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
