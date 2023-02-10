@@ -7,6 +7,9 @@ Informações a serem coletadas no inicio
 - Texto a ser inserido
 - Caminho para o deposito das imagens geradas
 
+
+
+
 ```mermaid
 graph LR;
     A["(User) Caminho da Imagem fa:fa-globe"]
