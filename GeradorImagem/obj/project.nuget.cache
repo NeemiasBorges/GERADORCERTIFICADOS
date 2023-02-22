@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kh7PtyGdby2nWt8kOnSKDR9rXUck/hHLVkRMYCZ8KvfMQGEu4Zm7eQr7ASqGvp8hGgWRTggYKFfsvo2Ey1avVQ==",
+  "dgSpecHash": "g6VY7u9PvVPmKHYZoBvdVnOO7+jTUUfiDaqTcWZnLjh/tVud8nhcb/j2pR92x70lLHo6/TY6hF8x1JIEQGEZHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GeradorImagem\\GeradorImagem.csproj",
+  "projectFilePath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GERADORCERTIFICADOS\\GeradorImagem\\GeradorImagem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Neemias2\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Neemias2\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"

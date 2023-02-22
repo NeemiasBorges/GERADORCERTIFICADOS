@@ -133,11 +133,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GeradorImagem\\GeradorImagem.csproj",
+      "projectUniqueName": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GERADORCERTIFICADOS\\GeradorImagem\\GeradorImagem.csproj",
       "projectName": "GeradorImagem",
-      "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GeradorImagem\\GeradorImagem.csproj",
+      "projectPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GERADORCERTIFICADOS\\GeradorImagem\\GeradorImagem.csproj",
       "packagesPath": "C:\\Users\\Neemias2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GeradorImagem\\obj\\",
+      "outputPath": "C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\GERADORCERTIFICADO\\GeradorImagem\\GERADORCERTIFICADOS\\GeradorImagem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
