@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing;
 using System.Drawing.Imaging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GeradorImagem
 {
@@ -11,7 +12,7 @@ namespace GeradorImagem
             //load image by path
             Console.WriteLine("Informe o Caminho da Imagem que deseja Utilizar (BMP): ");
             //string imagePath         = Console.ReadLine("C:\\Users\\Neemias2\\Desktop\\PROJETOS\\PESSOAL\\Imagens");
-            string imagePath           = "C:\\Users\\Neemias2\\Downloads\\test.bmp";
+            string imagePath           = "C:\\Users\\Neemias2\\Desktop\\thumb.bmp";
 
             //Path to save images
             Console.WriteLine("Informe o Caminho para salvar as imagens: ");
@@ -31,13 +32,13 @@ namespace GeradorImagem
                 Bitmap bitmap            = new Bitmap(imagePath);
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    using (Font arialFont = new Font("Arial", 10))
+                    using (Font arialFont = new Font("Proxima Nova Rg", 52))
                     {
-                        graphics.DrawString("Text to add", arialFont, Brushes.Black, new PointF(0, 0));
+                        graphics.DrawString(item, arialFont, Brushes.Black, new PointF(110,335));
                     }
                 }
 
-                bitmap.Save(@$"{caminhoParaSalvar}\\TEST.jpeg", ImageFormat.Jpeg);
+                bitmap.Save(@$"{caminhoParaSalvar}\\{item.Trim()}.jpeg", ImageFormat.Jpeg);
             }
         }
     }

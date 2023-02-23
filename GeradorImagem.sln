@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorImagem", "GeradorImagem\GeradorImagem.csproj", "{62794377-2238-4D9F-808E-5CF14BDD0C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeradorImagem", "GeradorImagem\GeradorImagem.csproj", "{62794377-2238-4D9F-808E-5CF14BDD0C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorDeCertificado", "GeradorDeCertificado\GeradorDeCertificado.csproj", "{50E8A201-9E90-489D-A237-4970BCD3877D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{62794377-2238-4D9F-808E-5CF14BDD0C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62794377-2238-4D9F-808E-5CF14BDD0C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62794377-2238-4D9F-808E-5CF14BDD0C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E8A201-9E90-489D-A237-4970BCD3877D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E8A201-9E90-489D-A237-4970BCD3877D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E8A201-9E90-489D-A237-4970BCD3877D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E8A201-9E90-489D-A237-4970BCD3877D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
