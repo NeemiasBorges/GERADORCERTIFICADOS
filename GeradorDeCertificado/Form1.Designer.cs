@@ -13,6 +13,8 @@ namespace GeradorDeCertificado
         private Label label2;
         private Label label3;
         private Label label4;
+        private ComboBox listaDirecao;
+        private ComboBox listaFontes;
         private TextBox tbImagePath;
         private TextBox tbSavePath;
         private TextBox tbCSVPath;
@@ -65,7 +67,8 @@ namespace GeradorDeCertificado
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dropDown = new System.Windows.Forms.ComboBox();
+            this.listaFontes = new System.Windows.Forms.ComboBox();
+            this.listaDirecao = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -160,12 +163,12 @@ namespace GeradorDeCertificado
             // 
             // dropDown
             // 
-            this.dropDown.Items.AddRange(new object[] {
+            this.listaFontes.Items.AddRange(new object[] {
             ""});
-            this.dropDown.Location = new System.Drawing.Point(198, 93);
-            this.dropDown.Name = "dropDown";
-            this.dropDown.Size = new System.Drawing.Size(330, 23);
-            this.dropDown.TabIndex = 24;
+            this.listaFontes.Location = new System.Drawing.Point(198, 93);
+            this.listaFontes.Name = "dropDown";
+            this.listaFontes.Size = new System.Drawing.Size(330, 23);
+            this.listaFontes.TabIndex = 24;
 
             using (InstalledFontCollection col = new InstalledFontCollection())
             {
@@ -174,6 +177,27 @@ namespace GeradorDeCertificado
                     this.dropDown.Items.Add(fa.Name);
                 }
             }
+
+
+            // 
+            // dropDown irecao
+            // 
+            this.listaDirecao.Items.AddRange(new object[] {
+            ""});
+            this.listaDirecao.Location = new System.Drawing.Point(198, 93);
+            this.listaDirecao.Name = "listaDirecao";
+            this.listaDirecao.Size = new System.Drawing.Size(330, 23);
+            this.listaDirecao.TabIndex = 24;
+
+           this.listaDirecao.Items.Add("Superior Esquerda");
+           this.listaDirecao.Items.Add("Superior Meio");
+           this.listaDirecao.Items.Add("Superior Direito");
+           this.listaDirecao.Items.Add("Meio Esquerda");
+           this.listaDirecao.Items.Add("Centralizado");
+           this.listaDirecao.Items.Add("Meio Direta");
+           this.listaDirecao.Items.Add("Inferior Esquedo");
+           this.listaDirecao.Items.Add("Inferior Meio");
+           this.listaDirecao.Items.Add("Inferior Direito");
 
             this.progressBar1.Visible = false;
             this.progressBar1.Maximum = 100;
