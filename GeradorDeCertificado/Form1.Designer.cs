@@ -1,4 +1,7 @@
-﻿namespace GeradorDeCertificado
+﻿using System.Drawing.Text;
+using System.Windows.Forms;
+
+namespace GeradorDeCertificado
 {
     partial class Form1
     {
@@ -9,6 +12,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Label label4;
         private TextBox tbImagePath;
         private TextBox tbSavePath;
         private TextBox tbCSVPath;
@@ -16,6 +20,7 @@
         private Button btnCancel;
         private ToolTip toolTip1;
         ProgressBar progressBar1 = new ProgressBar();
+        InstalledFontCollection installedfontcollection = new InstalledFontCollection();
 
         public Button GerarImagem { get; private set; }
         public Button Cancelar { get; private set; }
@@ -53,23 +58,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tbImagePath = new System.Windows.Forms.TextBox();
             this.tbSavePath = new System.Windows.Forms.TextBox();
             this.tbCSVPath = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dropDown = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 12);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Caminho da Imagem:";
             this.toolTip1.SetToolTip(this.label1, "Insira o caminho da imagem que deseja utilizar como modelo.");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -91,6 +99,16 @@
             this.label3.Text = "Caminho do arquivo CSV:";
             this.toolTip1.SetToolTip(this.label3, "Insira o caminho do arquivo CSV contendo a lista de textos a serem adicionados na" +
         "s imagens.");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Selecione uma font:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tbImagePath
             // 
@@ -140,33 +158,47 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // dropDown
+            // 
+            this.dropDown.Items.AddRange(new object[] {
+            ""});
+            this.dropDown.Location = new System.Drawing.Point(198, 93);
+            this.dropDown.Name = "dropDown";
+            this.dropDown.Size = new System.Drawing.Size(330, 23);
+            this.dropDown.TabIndex = 24;
+
+            using (InstalledFontCollection col = new InstalledFontCollection())
+            {
+                foreach (FontFamily fa in col.Families)
+                {
+                    this.dropDown.Items.Add(fa.Name);
+                }
+            }
+
+            this.progressBar1.Visible = false;
+            this.progressBar1.Maximum = 100;
+            this.progressBar1.Location = new System.Drawing.Point(134, 180);
+            this.progressBar1.Size = new System.Drawing.Size(250, 23);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(554, 261);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbImagePath);
             this.Controls.Add(this.tbSavePath);
             this.Controls.Add(this.tbCSVPath);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnCancel);
-
-            progressBar1.Location = new System.Drawing.Point(111,179);
-            progressBar1.Visible = false;
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new System.Drawing.Size(300, 30);
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 100;
-
-            // Adiciona o ProgressBar ao form
-            this.Controls.Add(progressBar1);
+            this.Controls.Add(this.dropDown);
 
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -180,5 +212,7 @@
         }
 
         #endregion
+
+        private ComboBox dropDown;
     }
 }

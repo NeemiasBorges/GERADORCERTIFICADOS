@@ -24,6 +24,7 @@ namespace GeradorDeCertificado
 
         private void btnGenerate_Click_1(object sender, EventArgs e)
         {
+            progressBar1.Enabled = true;
             progressBar1.Visible = true;
 
 
@@ -59,10 +60,13 @@ namespace GeradorDeCertificado
                 }
             }
 
+            string selectedFontStringName = this.dropDown.Text;
             // Lê os dados do arquivo CSV
             try
             {
-                using (var reader = new StreamReader(tbCSVPath.Text))
+                btnGenerate.Enabled = false;
+                btnCancel.Enabled   = false;
+                using (var reader   = new StreamReader(tbCSVPath.Text))
                 {
                     while (!reader.EndOfStream)
                     {
@@ -75,7 +79,7 @@ namespace GeradorDeCertificado
                             Bitmap bitmap = new Bitmap(tbImagePath.Text);
                             using (Graphics graphics = Graphics.FromImage(bitmap))
                             {
-                                using (Font arialFont = new Font("Proxima Nova Rg", 52))
+                                using (Font arialFont = new Font(selectedFontStringName, 52))
                                 {
                                     graphics.DrawString(item, arialFont, Brushes.Black, new PointF(110, 335));
                                 }
@@ -87,15 +91,20 @@ namespace GeradorDeCertificado
                             progressBarCounter = progressBarCounter + (100 / values.Count());
                         }
                     }
+                    btnGenerate.Enabled = true;
+                    btnCancel.Enabled   = true;
                 }
 
                 MessageBox.Show("As imagens foram geradas com sucesso!", "Concluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
+                btnGenerate.Enabled = true;
+                btnCancel.Enabled   = true;
                 MessageBox.Show($"Erro ao gerar as imagens. Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            progressBar1.Value  = 100;
             progressBar1.Visible = false;
         }
 
@@ -106,6 +115,16 @@ namespace GeradorDeCertificado
 
 
         private void tbSavePath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
